@@ -1,0 +1,61 @@
+<!-- Realm of Darkness (HTML Part) -->
+<!-- A Progressive Web App that plunges users into a haunted experience with creepy visuals, glitch effects, eerie audio, and webcam-based horror – built to thrill and scare -->
+<!-- Program by Zidaan -->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head of the webpage -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Realm of Darkness</title>
+  <link rel="manifest" href="manifest.json" /> <!-- Manifest file for PWA compatibility -->
+  <link rel="stylesheet" href="style.css" /> <!-- Linking external CSS Stylesheet -->
+</head>
+<!-- Body of the webpage (Begins) -->
+<body>
+  <audio id="bgMusic" src="assets/sounds/creepy-loop.mp3" loop preload="auto"></audio> <!-- Background horror music that loops infinitely -->
+  <audio id="scream" src="assets/sounds/scream.mp3" preload="auto"></audio> <!-- Sudden scream sound used for jumpscares -->
+  <!-- Welcome screen with glitch effect and entry button -->
+  <div id="welcome" class="centered-screen">
+    <h1 class="glitch">Welcome To The Realm Of Darkness</h1>
+    <p>Where Nightmares Come To Life. <br>
+  <span class="headphone-warning">🎧 Use Headphones For Full Horror</span></p>
+    <button id="startBtn">Enter</button> <!-- Starts the horror experience -->
+  </div>
+  <!-- Camera section with live sketch effect (initially hidden) -->
+  <div id="camera" class="hidden">
+    <video id="video" autoplay muted playsinline></video> <!-- Webcam video feed -->
+    <canvas id="canvas"></canvas> <!-- Canvas for applying sketch or horror effects -->
+    <button id="exitBtn">Exit</button> <!-- Exits the scary scene -->
+  </div>
+  <!-- Goodbye screen displayed after the horror sequence -->
+  <div id="goodbye" class="centered-screen hidden">
+    <h1 class="glitch red-glow">Your Camera Wasn't the Only One Watching</h1>
+    <p class="glitch red-glow">Sleep Well... If You Can.</p>
+  </div>
+  <!-- Info Button to show install instructions for PWA -->
+  <button id="infoButton" class="info-btn">i</button>
+  <!-- Modal box displaying platform-wise install steps -->
+  <div id="infoModal" class="info-modal">
+    <h3>📲 How to Install it on your Device</h3>
+    <!-- Mobile installation guide -->
+    <p><strong class="phone-heading">For Phone:</strong><br>
+      1. Tap the ⋮ (three dots) on your browser<br>
+      2. Tap “Add to Home screen”<br>
+      3. Confirm to install</p>
+    <!-- Desktop installation guide -->
+    <p><strong class="desktop-heading">For Desktop:</strong><br>
+      1. Click the install icon in the address bar<br>
+      OR<br>
+      2. Click ⋮ in browser > More tools > Install</p>
+    <!-- Close button for modal -->
+    <div style="text-align:center;">
+      <button onclick="closeInfoModal()" class="close-btn">Close</button>
+    </div>
+  </div>
+  <script async src="https://docs.opencv.org/4.x/opencv.js"></script> <!-- OpenCV.js for sketch video filter and horror rendering -->
+  <script src="script.js"></script> <!-- Linking external JavaScript code for functionality -->
+</body>
+<!-- Body of the webpage (Ends) -->
+</html>
+<!-- End of Program -->
