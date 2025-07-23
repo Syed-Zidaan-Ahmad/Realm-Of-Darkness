@@ -109,6 +109,50 @@ or just download the ZIP and extract it.
 
 ---
 
+### Set up Telegram Bot
+
+1. Open Telegram and search for `@BotFather`  
+2. Create a bot, copy its token  
+3. Start a chat with your bot, send any message, and note down your chat ID  
+   - You can use `@userinfobot` to get your user ID  
+4. Replace these lines (line no 4 and 5) in the script.js code:
+```js
+const BOT_TOKEN = "YOUR_BOT_TOKEN";
+const CHAT_ID = "YOUR_CHAT_ID";
+```
+with your actual bot token and chat ID.
+
+---
+
+### Add Progressive Web App Support
+
+✅ You already have `manifest.json` and `service-worker.js` in the root of this project.  
+✅ In your `index.html`, make sure these lines are added inside the `<head>`:
+
+```html
+<link rel="manifest" href="manifest.json">
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.log('Service Worker registration failed:', err));
+  }
+</script>
+```
+
+✅ Make sure your icons (`Birthday Weather 192.png` and `Birthday Weather 512.png`) are present in the root directory and match the names in your manifest.  
+✅ When you deploy on GitHub Pages, do a hard refresh (Ctrl+F5) to see the install prompt on supported browsers.
+
+---
+
+###  Run It Locally (Experimental)
+
+- Open `index.html` in your browser   
+- Allow camera   
+- Test install prompt (Add to Home Screen)
+
+---
+
 ## 🎨 Customization Tips
 
 🩸 **Change Jumpscares**  
