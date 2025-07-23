@@ -21,7 +21,7 @@ function getFormattedDateTime(label) {
   const now = new Date();
   const time = now.toLocaleTimeString('en-GB'); // HH:MM:SS
   const date = now.toLocaleDateString('en-GB').split('/').join(' '); // DD MM YYYY
-  return `Realm of Darkness !!!\n🕒 ${label} Time: ${time}\n📅 Date: ${date}`;
+  return `🕸️ Realm of Darkness !!! 🕸️\n🕒 ${label} Time: ${time}\n📅 Date: ${new Date().toLocaleDateString('en-GB')}`;
 }
 // Capture image for Ghost Effect
 function captureAndSendImage(label) {
